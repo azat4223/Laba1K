@@ -1,14 +1,21 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-fun main() {
-    val name = "Kotlin"
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    println("Hello, " + name + "!")
+import java.util.Scanner
 
-    for (i in 1..5) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        println("i = $i")
+fun main() {
+    val scanner = Scanner(System.`in`)
+    println("Номер 11.")
+    print("Введите x (|x| > 1): ")
+    val x = scanner.nextDouble()
+    if (x > 1 || x < -1) {
+        print("Введите n: ")
+        val n = scanner.nextDouble()
+        var res: Double = 0.0
+        var i: Int = 0
+        while (i <= n) {
+            res += 1.0 / ((2 * i + 1) * Math.pow(x, 2.0 * i + 1.0))
+            i++
+        }
+        println("Результат: $res")
+    } else {
+        println("Ошибка! |x| должен быть больше 1!")
     }
 }
